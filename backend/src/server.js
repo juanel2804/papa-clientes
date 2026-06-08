@@ -68,7 +68,14 @@ async function handleLogin(req, res) {
 async function getDashboard(req, res, url) {
   const paymentMonth = monthStart(url.searchParams.get("month"));
   const dueDays = dueSoonSql();
-  const [{ rows: totals }, { rows: byCommunity }, { rows: dueSoon }, { rows: latestPayments }] = await Promise.all([
+  const [
+  { rows: totals },
+  { rows: byCommunity },
+  { rows: dueSoon },
+  { rows: latestPayments },
+  { rows: revenue },
+  { rows: pendingClients }
+] = await Promise.all([
     query(
       `SELECT
         COUNT(*) FILTER (WHERE active) AS total_clients,
@@ -110,15 +117,94 @@ async function getDashboard(req, res, url) {
        ORDER BY p.updated_at DESC
        LIMIT 12`,
     ),
+      query(
+  `
+  SELECT
+    COALESCE(SUM(monthly_fee),0) AS expected_revenue,
+
+    COALESCE(
+      (
+        SELECT SUM(amount)
+        FROM payments
+        WHERE payment_month = $1::date
+        AND status = 'pagado'
+      ),
+      0
+    ) AS collected_revenue
+
+  FROM clients
+  WHERE active = TRUE
+  `,
+  [paymentMonth]
+),
+
+query(
+  `
+  SELECT
+    c.id,
+    c.name,
+    c.community,
+    c.cutoff_day,
+    c.monthly_fee
+
+  FROM clients c
+
+  WHERE c.active = TRUE
+
+  AND NOT EXISTS (
+    SELECT 1
+    FROM payments p
+    WHERE p.client_id = c.id
+    AND p.payment_month = $1::date
+    AND p.status = 'pagado'
+  )
+
+  ORDER BY
+    c.cutoff_day ASC,
+    c.name ASC
+
+  LIMIT 20
+  `,
+  [paymentMonth]
+),
   ]);
+  const expectedRevenue =
+  Number(
+    revenue[0]?.expected_revenue || 0
+  );
+
+const collectedRevenue =
+  Number(
+    revenue[0]?.collected_revenue || 0
+  );
+
+const collectionRate =
+  expectedRevenue > 0
+    ? Math.round(
+        (collectedRevenue / expectedRevenue) * 100
+      )
+    : 0;
 
   return send(res, 200, {
-    month: paymentMonth,
-    totals: totals[0],
-    byCommunity,
-    dueSoon,
-    latestPayments,
-  });
+  month: paymentMonth,
+
+  totals: totals[0],
+
+  byCommunity,
+
+  dueSoon,
+
+  latestPayments,
+
+  pendingClients,
+
+  expectedRevenue,
+
+  collectedRevenue,
+
+  collectionRate
+});
+
 }
 
 async function getClients(req, res, url) {
