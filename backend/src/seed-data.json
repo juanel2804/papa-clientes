@@ -1,0 +1,1752 @@
+{
+  "generatedAt": "2026-06-08T15:10:40",
+  "sourceFile": "pagos internet.xlsx",
+  "clients": [
+    {
+      "name": "Aida Quintos Garcia",
+      "community": "Sin comunidad",
+      "cutoffDay": 6,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Alberto Quintos Leon",
+      "community": "Sin comunidad",
+      "cutoffDay": 6,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Yaquelin Mellado Galindo",
+      "community": "Sin comunidad",
+      "cutoffDay": 9,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Ariana Olvera",
+      "community": "Sin comunidad",
+      "cutoffDay": 11,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Dulce Karina Escobedo",
+      "community": "Sin comunidad",
+      "cutoffDay": 12,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Azael Hernandez",
+      "community": "Sin comunidad",
+      "cutoffDay": 13,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Paula lopez Islas",
+      "community": "Sin comunidad",
+      "cutoffDay": 23,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Martha Quintos Ramirez",
+      "community": "Sin comunidad",
+      "cutoffDay": 21,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Samuel Mellado Quintos",
+      "community": "Sin comunidad",
+      "cutoffDay": 17,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Angelica salas hernandez",
+      "community": "Sin comunidad",
+      "cutoffDay": 19,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "silvia cortez Espinoza",
+      "community": "Sin comunidad",
+      "cutoffDay": 22,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Alejandro mellado yuleimy",
+      "community": "Sin comunidad",
+      "cutoffDay": 26,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Guadalupe Maldonado Escobedo",
+      "community": "Sin comunidad",
+      "cutoffDay": 28,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Maria Escobedo Cruz",
+      "community": "Sin comunidad",
+      "cutoffDay": 30,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "victoria maldonado",
+      "community": "Sin comunidad",
+      "cutoffDay": 18,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja2",
+      "active": true
+    },
+    {
+      "name": "Areli Garcia Rodriguez",
+      "community": "Sin comunidad",
+      "cutoffDay": 1,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Enrrique Acosta",
+      "community": "Sin comunidad",
+      "cutoffDay": 12,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "hugo cuñado paty",
+      "community": "Sin comunidad",
+      "cutoffDay": 15,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Alondra Garcia tienda",
+      "community": "Sin comunidad",
+      "cutoffDay": 15,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Saul Quintos",
+      "community": "Sin comunidad",
+      "cutoffDay": 18,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Rubi Quitntos",
+      "community": "Sin comunidad",
+      "cutoffDay": 1,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "adriana rivera (isac)",
+      "community": "Sin comunidad",
+      "cutoffDay": 28,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Doctoras Cuba",
+      "community": "Sin comunidad",
+      "cutoffDay": 1,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "cristi casa 1",
+      "community": "Sin comunidad",
+      "cutoffDay": 8,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "cristi casa 2",
+      "community": "Sin comunidad",
+      "cutoffDay": 8,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Yaneli escobedo David",
+      "community": "Sin comunidad",
+      "cutoffDay": 6,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "zeferino quintos",
+      "community": "Sin comunidad",
+      "cutoffDay": 13,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja3 depositos directo",
+      "active": true
+    },
+    {
+      "name": "Margarita Escobedo Curz",
+      "community": "Sin comunidad",
+      "cutoffDay": 1,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Yaneli Escobedo",
+      "community": "Sin comunidad",
+      "cutoffDay": 6,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Gerardo Escobedo Lazcano",
+      "community": "Sin comunidad",
+      "cutoffDay": 10,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Alondra Garcia Casa",
+      "community": "Sin comunidad",
+      "cutoffDay": 15,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Porfirio Maldonado",
+      "community": "Sin comunidad",
+      "cutoffDay": 16,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Isaac Mellado Vega",
+      "community": "Sin comunidad",
+      "cutoffDay": 18,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    },
+    {
+      "name": "Agustin Maldonado Garcia",
+      "community": "Sin comunidad",
+      "cutoffDay": 28,
+      "monthlyFee": null,
+      "phone": "",
+      "address": "",
+      "notes": "Importado desde Hoja1",
+      "active": true
+    }
+  ],
+  "payments": [
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-06-01",
+      "status": "pendiente",
+      "amount": 300,
+      "method": "efectivo",
+      "notes": "pendiente 300",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": 6,
+      "method": "efectivo",
+      "notes": "PAGO MES 6",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-09-01",
+      "status": "pendiente",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "revisar",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-10-01",
+      "status": "pendiente",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "revisar",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-11-01",
+      "status": "pendiente",
+      "amount": 500,
+      "method": "efectivo",
+      "notes": "500",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2025-04-01",
+      "status": "condonado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "condonado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2025-05-01",
+      "status": "condonado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "condonado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2025-07-01",
+      "status": "pendiente",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pendiente",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Samuel Mellado Quintos",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Samuel Mellado Quintos",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "ya",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Samuel Mellado Quintos",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2025-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "silvia cortez Espinoza",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "silvia cortez Espinoza",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "ya",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alejandro mellado yuleimy",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alejandro mellado yuleimy",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Alejandro mellado yuleimy",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-04-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-05-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-07-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-08-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2025-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "victoria maldonado",
+      "paymentMonth": "2025-09-01",
+      "status": "inicio",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "inicio",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "victoria maldonado",
+      "paymentMonth": "2025-10-01",
+      "status": "pendiente",
+      "amount": 300,
+      "method": "efectivo",
+      "notes": "300",
+      "source": "Hoja2"
+    },
+    {
+      "clientName": "Areli Garcia Rodriguez",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Enrrique Acosta",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "hugo cuñado paty",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Rubi Quitntos",
+      "paymentMonth": "2025-06-01",
+      "status": "suspendido",
+      "amount": null,
+      "method": "deposito",
+      "notes": "suspender",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Rubi Quitntos",
+      "paymentMonth": "2025-07-01",
+      "status": "pendiente",
+      "amount": null,
+      "method": "deposito",
+      "notes": "<",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "adriana rivera (isac)",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Doctoras Cuba",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "cristi casa 1",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "cristi casa 2",
+      "paymentMonth": "2025-09-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Yaneli escobedo David",
+      "paymentMonth": "2025-06-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "pagado",
+      "source": "Hoja3"
+    },
+    {
+      "clientName": "Areli Garcia Rodriguez",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Areli Garcia Rodriguez",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Areli Garcia Rodriguez",
+      "paymentMonth": "2024-12-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Margarita Escobedo Curz",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Aida Quintos Garcia",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Yaneli Escobedo",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Yaneli Escobedo",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2024-10-01",
+      "status": "inicio",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "inicio",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Alberto Quintos Leon",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Yaquelin Mellado Galindo",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Maria Escobedo Cruz",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Gerardo Escobedo Lazcano",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Gerardo Escobedo Lazcano",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Ariana Olvera",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Dulce Karina Escobedo",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Enrrique Acosta",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Enrrique Acosta",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Azael Hernandez",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Paula lopez Islas",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2024-10-01",
+      "status": "suspendido",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "suspendido",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Martha Quintos Ramirez",
+      "paymentMonth": "2024-11-01",
+      "status": "inicio",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "inicio",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Alondra Garcia Casa",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposto",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Alondra Garcia tienda",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Porfirio Maldonado",
+      "paymentMonth": "2024-10-01",
+      "status": "suspendido",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "suspendido",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Porfirio Maldonado",
+      "paymentMonth": "2024-11-01",
+      "status": "suspendido",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "suspendido",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Samuel Mellado Quintos",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Samuel Mellado Quintos",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Saul Quintos",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Rubi Quitntos",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Angelica salas hernandez",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Alejandro mellado yuleimy",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Isaac Mellado Vega",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Agustin Maldonado Garcia",
+      "paymentMonth": "2024-10-01",
+      "status": "pendiente",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pendiente",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Agustin Maldonado Garcia",
+      "paymentMonth": "2024-11-01",
+      "status": "suspendido",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "suspendido",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Doctoras Cuba",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Doctoras Cuba",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "deposito",
+      "notes": "deposito",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2024-10-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pagado",
+      "source": "Hoja1"
+    },
+    {
+      "clientName": "Guadalupe Maldonado Escobedo",
+      "paymentMonth": "2024-11-01",
+      "status": "pagado",
+      "amount": null,
+      "method": "efectivo",
+      "notes": "pago",
+      "source": "Hoja1"
+    }
+  ]
+}
