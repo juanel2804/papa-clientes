@@ -1,5 +1,12 @@
 import { state } from "./app.js";
-import { renderLogin } from "./views/login.js";
+
+import {
+  renderLogin
+} from "./views/login.js";
+
+import {
+  renderDashboard
+} from "./views/dashboard.js";
 
 function start() {
 
@@ -8,16 +15,7 @@ function start() {
     return;
   }
 
-  document.querySelector("#app").innerHTML = `
-    <div style="
-      padding:40px;
-      color:white;
-      font-size:30px;
-      text-align:center;
-    ">
-      🚀 Login correcto
-    </div>
-  `;
+  renderDashboard();
 }
 
 start();
