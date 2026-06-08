@@ -1,18 +1,35 @@
 import { app, state } from "../app.js";
+import { api } from "../api.js";
 
-export function renderDashboard() {
+export async function renderDashboard() {
+
+  if (!state.dashboard) {
+    try {
+      state.dashboard = await api(
+        `/api/dashboard?month=${state.month}`
+      );
+    } catch (error) {
+      app.innerHTML = `
+        <div style="padding:20px">
+          Error: ${error.message}
+        </div>
+      `;
+      return;
+    }
+  }
+
+  const totals =
+    state.dashboard?.totals || {};
 
   app.innerHTML = `
-  
+
   <section class="dashboard">
 
     <header class="dashboard-header">
 
       <div>
         <h1>Control de Clientes</h1>
-        <p>
-          Dashboard principal
-        </p>
+        <p>Dashboard principal</p>
       </div>
 
       <button id="logoutBtn">
@@ -23,30 +40,73 @@ export function renderDashboard() {
 
     <section class="kpis">
 
-      <div class="kpi-card">
+      <div class="kpi-card clientes">
         <span>Clientes</span>
-        <strong>0</strong>
+        <strong>
+          ${totals.total_clients || 0}
+        </strong>
       </div>
 
-      <div class="kpi-card">
+      <div class="kpi-card pagados">
         <span>Pagados</span>
-        <strong>0</strong>
+        <strong>
+          ${totals.paid_this_month || 0}
+        </strong>
       </div>
 
-      <div class="kpi-card">
+      <div class="kpi-card pendientes">
         <span>Pendientes</span>
-        <strong>0</strong>
+        <strong>
+          ${totals.pending_this_month || 0}
+        </strong>
       </div>
 
-      <div class="kpi-card">
+      <div class="kpi-card suspendidos">
         <span>Suspendidos</span>
-        <strong>0</strong>
+        <strong>
+          ${totals.suspended_clients || 0}
+        </strong>
+      </div>
+
+    </section>
+
+    <section class="panel-card">
+
+      <h3>
+        ⚡ Cortes próximos
+      </h3>
+
+      <div class="mini-list">
+
+        ${
+          (state.dashboard?.dueSoon || [])
+            .map(client => `
+              <div class="mini-client">
+
+                <div>
+                  <strong>
+                    ${client.name}
+                  </strong>
+
+                  <small>
+                    ${client.community}
+                  </small>
+                </div>
+
+                <span>
+                  Día ${client.cutoff_day}
+                </span>
+
+              </div>
+            `)
+            .join("")
+        }
+
       </div>
 
     </section>
 
   </section>
-
   `;
 
   document

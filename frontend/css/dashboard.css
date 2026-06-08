@@ -72,3 +72,55 @@
     }
 
 }
+.panel-card{
+    margin-top:20px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:20px;
+}
+
+.panel-card h3{
+    margin-top:0;
+}
+
+.mini-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.mini-client{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#334155;
+
+    padding:12px;
+
+    border-radius:12px;
+}
+
+.mini-client strong{
+    display:block;
+}
+
+.mini-client small{
+    color:#94a3b8;
+}
+
+.clientes{
+    border-left:5px solid #3b82f6;
+}
+
+.pagados{
+    border-left:5px solid #22c55e;
+}
+
+.pendientes{
+    border-left:5px solid #f59e0b;
+}
+
+.suspendidos{
+    border-left:5px solid #ef4444;
+}

@@ -8,14 +8,14 @@ import {
   renderDashboard
 } from "./views/dashboard.js";
 
-function start() {
+async function start() {
 
   if (!state.token) {
     renderLogin();
     return;
   }
 
-  renderDashboard();
+  await renderDashboard();
 }
 
 start();
