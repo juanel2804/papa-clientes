@@ -1,14 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control de Clientes</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <main id="app"></main>
-    <script src="./config.js"></script>
-    <script src="./app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Control de Clientes</title>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Estilos por vista -->
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/clientes.css">
+  <link rel="stylesheet" href="./css/pagos.css">
+</head>
+
+<body>
+
+  <!-- Aquí se renderiza toda la aplicación -->
+  <main id="app"></main>
+
+  <!-- Configuración -->
+  <script src="js/config.js"></script>
+
+  <!-- Aplicación principal -->
+  <script type="module" src="./js/main.js"></script>
+
+</body>
 </html>
