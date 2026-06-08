@@ -1,6 +1,15 @@
 import { app, state } from "../app.js";
 import { api } from "../api.js";
 
+const money = new Intl.NumberFormat(
+  "es-MX",
+  {
+    style: "currency",
+    currency: "MXN",
+    maximumFractionDigits: 0,
+  }
+);
+
 export async function renderDashboard() {
 
   if (!state.dashboard) {
@@ -21,6 +30,15 @@ export async function renderDashboard() {
   const totals =
     state.dashboard?.totals || {};
 
+  const rate =
+    state.dashboard?.collectionRate || 0;
+
+  const expectedRevenue =
+    state.dashboard?.expectedRevenue || 0;
+
+  const collectedRevenue =
+    state.dashboard?.collectedRevenue || 0;
+
   app.innerHTML = `
 
   <section class="dashboard">
@@ -28,8 +46,10 @@ export async function renderDashboard() {
     <header class="dashboard-header">
 
       <div>
-        <h1>Control de Clientes</h1>
-        <p>Dashboard principal</p>
+        <h1>📡 Control de Clientes</h1>
+        <p>
+          Estado general del negocio
+        </p>
       </div>
 
       <button id="logoutBtn">
@@ -68,33 +88,172 @@ export async function renderDashboard() {
         </strong>
       </div>
 
+      <div class="kpi-card warning">
+        <span>Cortes Próximos</span>
+        <strong>
+          ${totals.due_soon || 0}
+        </strong>
+      </div>
+
+      <div class="kpi-card success">
+        <span>Cobranza</span>
+        <strong>
+          ${rate}%
+        </strong>
+      </div>
+
+    </section>
+
+    <section class="collection-card">
+
+      <div class="collection-header">
+
+        <h3>
+          💰 Cobranza del Mes
+        </h3>
+
+        <strong>
+          ${rate}%
+        </strong>
+
+      </div>
+
+      <div class="progress">
+
+        <div
+          class="progress-fill"
+          style="width:${rate}%"
+        ></div>
+
+      </div>
+
+      <p>
+        ${money.format(collectedRevenue)}
+        de
+        ${money.format(expectedRevenue)}
+      </p>
+
+    </section>
+
+    <section class="dashboard-grid">
+
+      <div class="panel-card">
+
+        <h3>
+          ⚡ Cortes Próximos
+        </h3>
+
+        <div class="mini-list">
+
+          ${
+            (state.dashboard?.dueSoon || [])
+              .map(client => `
+                <div class="mini-client">
+
+                  <div>
+
+                    <strong>
+                      ${client.name}
+                    </strong>
+
+                    <small>
+                      ${client.community}
+                    </small>
+
+                  </div>
+
+                  <span>
+                    Día ${client.cutoff_day}
+                  </span>
+
+                </div>
+              `)
+              .join("")
+          }
+
+        </div>
+
+      </div>
+
+      <div class="panel-card">
+
+        <h3>
+          🟡 Pendientes de Cobro
+        </h3>
+
+        <div class="mini-list">
+
+          ${
+            (state.dashboard?.pendingClients || [])
+              .map(client => `
+                <div class="mini-client">
+
+                  <div>
+
+                    <strong>
+                      ${client.name}
+                    </strong>
+
+                    <small>
+                      ${client.community}
+                    </small>
+
+                  </div>
+
+                  <span>
+                    ${
+                      client.monthly_fee
+                        ? money.format(
+                            client.monthly_fee
+                          )
+                        : "-"
+                    }
+                  </span>
+
+                </div>
+              `)
+              .join("")
+          }
+
+        </div>
+
+      </div>
+
     </section>
 
     <section class="panel-card">
 
       <h3>
-        ⚡ Cortes próximos
+        💵 Últimos Pagos
       </h3>
 
       <div class="mini-list">
 
         ${
-          (state.dashboard?.dueSoon || [])
-            .map(client => `
+          (state.dashboard?.latestPayments || [])
+            .map(payment => `
               <div class="mini-client">
 
                 <div>
+
                   <strong>
-                    ${client.name}
+                    ${payment.client_name}
                   </strong>
 
                   <small>
-                    ${client.community}
+                    ${payment.status}
                   </small>
+
                 </div>
 
                 <span>
-                  Día ${client.cutoff_day}
+                  ${
+                    payment.amount
+                      ? money.format(
+                          payment.amount
+                        )
+                      : "-"
+                  }
                 </span>
 
               </div>
@@ -107,6 +266,7 @@ export async function renderDashboard() {
     </section>
 
   </section>
+
   `;
 
   document
