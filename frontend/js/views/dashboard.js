@@ -147,6 +147,7 @@ export async function renderDashboard() {
 
           ${
             (state.dashboard?.dueSoon || [])
+.slice(0,5)
               .map(client => `
                 <div class="mini-client">
 
@@ -185,6 +186,7 @@ export async function renderDashboard() {
 
           ${
             (state.dashboard?.pendingClients || [])
+.slice(0,5)
               .map(client => `
                 <div class="mini-client">
 
@@ -231,6 +233,7 @@ export async function renderDashboard() {
 
         ${
           (state.dashboard?.latestPayments || [])
+.slice(0,5)
             .map(payment => `
               <div class="mini-client">
 
