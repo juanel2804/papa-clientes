@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createToken, requireAuth, validateLogin } from "./auth.js";
 import { query } from "./db.js";
+import { seedDatabase } from "./seed.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const port = process.env.PORT || 4000;
@@ -245,6 +246,15 @@ async function savePayment(req, res) {
   return send(res, 200, { payment: rows[0] });
 }
 
+async function runSeed(req, res) {
+  const result = await seedDatabase();
+  return send(res, 200, {
+    ok: true,
+    message: `Seed listo: ${result.clients} clientes, ${result.payments} pagos.`,
+    ...result,
+  });
+}
+
 async function router(req, res) {
   if (req.method === "OPTIONS") {
     res.writeHead(204, corsHeaders());
@@ -259,6 +269,7 @@ async function router(req, res) {
     if (!requireAuth(req, res)) return;
 
     if (req.method === "GET" && url.pathname === "/api/dashboard") return getDashboard(req, res, url);
+    if (req.method === "POST" && url.pathname === "/api/admin/seed") return runSeed(req, res);
     if (req.method === "GET" && url.pathname === "/api/clients") return getClients(req, res, url);
     if (req.method === "POST" && url.pathname === "/api/clients") return createClient(req, res);
 

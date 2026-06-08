@@ -5,7 +5,7 @@ import { closeDb, pool, query } from "./db.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-async function main() {
+export async function seedDatabase() {
   const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
   await query(schema);
 
@@ -68,17 +68,27 @@ async function main() {
     }
 
     await client.query("COMMIT");
-    console.log(`Seed listo: ${data.clients.length} clientes, ${data.payments.length} pagos.`);
+    return {
+      clients: data.clients.length,
+      payments: data.payments.length,
+    };
   } catch (error) {
     await client.query("ROLLBACK");
     throw error;
   } finally {
     client.release();
-    await closeDb();
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  seedDatabase()
+    .then(async (result) => {
+      console.log(`Seed listo: ${result.clients} clientes, ${result.payments} pagos.`);
+      await closeDb();
+    })
+    .catch(async (error) => {
+      console.error(error);
+      await closeDb();
+      process.exit(1);
+    });
+}
