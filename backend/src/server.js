@@ -102,6 +102,7 @@ async function getDashboard(req, res, url) {
   AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
   AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
 ) AS due_soon,
+        
         COUNT(*) FILTER (
   WHERE active
   AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
@@ -115,14 +116,10 @@ async function getDashboard(req, res, url) {
 ) AS pending_this_month,
         COUNT(*) FILTER (WHERE active AND EXISTS (
           SELECT 1 FROM payments p
-          WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pendiente'
-        )) AS pending_this_month,
-        COUNT(*) FILTER (WHERE active AND EXISTS (
-          SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.status = 'suspendido'
         )) AS suspended_clients
        FROM clients`,
-      [paymentMonth, dueDays],
+      [paymentMonth],
     ),
     query(
       `SELECT community, COUNT(*)::int AS total
@@ -146,9 +143,7 @@ AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
 
 AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
 
-ORDER BY cutoff_day ASC, name ASC
 
-LIMIT 20
        ORDER BY cutoff_day ASC, name ASC
        LIMIT 20`,
       [dueDays],
@@ -204,11 +199,7 @@ AND NOT EXISTS (
   AND p.status = 'pagado'
 )
 
-ORDER BY
-  c.cutoff_day ASC,
-  c.name ASC
 
-LIMIT 20
 
   ORDER BY
     c.cutoff_day ASC,
