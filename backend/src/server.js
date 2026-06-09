@@ -332,10 +332,23 @@ async function getPayments(req, res, url) {
   if (!hasDatabase) return send(res, 200, await getLocalPayments(paymentMonth));
 
   const { rows } = await query(
-    `SELECT p.*, c.name AS client_name, c.community, c.cutoff_day
-     FROM payments p
-     JOIN clients c ON c.id = p.client_id
-     WHERE p.payment_month = $1::date
+    `SELECT
+       p.id,
+       c.id AS client_id,
+       $1::date AS payment_month,
+       p.paid_at,
+       COALESCE(p.amount, c.monthly_fee) AS amount,
+       COALESCE(p.status, 'pendiente') AS status,
+       COALESCE(p.method, 'efectivo') AS method,
+       COALESCE(p.notes, '') AS notes,
+       c.name AS client_name,
+       c.community,
+       c.cutoff_day
+     FROM clients c
+     LEFT JOIN payments p
+       ON p.client_id = c.id
+      AND p.payment_month = $1::date
+     WHERE c.active = TRUE
      ORDER BY c.cutoff_day NULLS LAST, c.name ASC`,
     [paymentMonth],
   );

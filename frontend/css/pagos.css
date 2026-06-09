@@ -7,17 +7,89 @@
   min-width: 180px;
 }
 
-.pagos-view td small {
+.payment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.payment-summary div {
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 12px;
+  background: #17233c;
+}
+
+.payment-summary span {
   display: block;
-  margin-top: 4px;
   color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.pagos-view table input,
-.pagos-view table select {
-  min-width: 130px;
+.payment-summary strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 26px;
 }
 
-.pagos-view table input[data-field="notes"] {
-  min-width: 220px;
+.payment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.payment-card {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 12px;
+  background: #17233c;
+}
+
+.full-button {
+  width: 100%;
+}
+
+.payment-modal {
+  width: min(620px, 100%);
+}
+
+@media (max-width: 620px) {
+  .pagos-view {
+    gap: 12px;
+  }
+
+  .payment-summary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .payment-summary div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .payment-summary strong {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .payment-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .payment-card {
+    padding: 12px;
+  }
+
+  .month-picker {
+    width: 100%;
+  }
 }
