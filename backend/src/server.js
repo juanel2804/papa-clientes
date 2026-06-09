@@ -102,10 +102,17 @@ async function getDashboard(req, res, url) {
           SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pagado'
         )) AS paid_this_month,
-        COUNT(*) FILTER (WHERE active AND EXISTS (
-          SELECT 1 FROM payments p
-          WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pendiente'
-        )) AS pending_this_month,
+        COUNT(*) FILTER (
+  WHERE active
+  AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
+  AND NOT EXISTS (
+    SELECT 1
+    FROM payments p
+    WHERE p.client_id = clients.id
+    AND p.payment_month = $1::date
+    AND p.status = 'pagado'
+  )
+) AS pending_this_month
         COUNT(*) FILTER (WHERE active AND EXISTS (
           SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.status = 'suspendido'
@@ -168,6 +175,8 @@ query(
 FROM clients c
 
 WHERE c.active = TRUE
+
+AND c.cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
 
 AND NOT EXISTS (
   SELECT 1
