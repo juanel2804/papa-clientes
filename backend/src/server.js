@@ -97,11 +97,7 @@ async function getDashboard(req, res, url) {
     query(
       `SELECT
         COUNT(*) FILTER (WHERE active) AS total_clients,
-        COUNT(*) FILTER (
-  WHERE active
-  AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
-  AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
-) AS due_soon,
+        COUNT(*) FILTER (WHERE active AND cutoff_day = ANY($2::int[])) AS due_soon,
         COUNT(*) FILTER (WHERE active AND EXISTS (
           SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pagado'
