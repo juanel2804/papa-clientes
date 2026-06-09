@@ -97,11 +97,22 @@ async function getDashboard(req, res, url) {
     query(
       `SELECT
         COUNT(*) FILTER (WHERE active) AS total_clients,
-        COUNT(*) FILTER (WHERE active AND cutoff_day = ANY($2::int[])) AS due_soon,
-        COUNT(*) FILTER (WHERE active AND EXISTS (
-          SELECT 1 FROM payments p
-          WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pagado'
-        )) AS paid_this_month,
+        COUNT(*) FILTER (
+  WHERE active
+  AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
+  AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
+) AS due_soon,
+        COUNT(*) FILTER (
+  WHERE active
+  AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
+  AND NOT EXISTS (
+    SELECT 1
+    FROM payments p
+    WHERE p.client_id = clients.id
+    AND p.payment_month = $1::date
+    AND p.status = 'pagado'
+  )
+) AS pending_this_month,
         COUNT(*) FILTER (WHERE active AND EXISTS (
           SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pendiente'
@@ -121,9 +132,23 @@ async function getDashboard(req, res, url) {
        ORDER BY total DESC, community ASC`,
     ),
     query(
-      `SELECT id, name, community, cutoff_day
-       FROM clients
-       WHERE active AND cutoff_day = ANY($1::int[])
+      `SELECT
+  id,
+  name,
+  community,
+  cutoff_day
+
+FROM clients
+
+WHERE active
+
+AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
+
+AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
+
+ORDER BY cutoff_day ASC, name ASC
+
+LIMIT 20
        ORDER BY cutoff_day ASC, name ASC
        LIMIT 20`,
       [dueDays],
@@ -159,23 +184,31 @@ async function getDashboard(req, res, url) {
 query(
   `
   SELECT
-    c.id,
-    c.name,
-    c.community,
-    c.cutoff_day,
-    c.monthly_fee
+  c.id,
+  c.name,
+  c.community,
+  c.cutoff_day,
+  c.monthly_fee
 
-  FROM clients c
+FROM clients c
 
-  WHERE c.active = TRUE
+WHERE c.active = TRUE
 
-  AND NOT EXISTS (
-    SELECT 1
-    FROM payments p
-    WHERE p.client_id = c.id
-    AND p.payment_month = $1::date
-    AND p.status = 'pagado'
-  )
+AND c.cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
+
+AND NOT EXISTS (
+  SELECT 1
+  FROM payments p
+  WHERE p.client_id = c.id
+  AND p.payment_month = $1::date
+  AND p.status = 'pagado'
+)
+
+ORDER BY
+  c.cutoff_day ASC,
+  c.name ASC
+
+LIMIT 20
 
   ORDER BY
     c.cutoff_day ASC,

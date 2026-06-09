@@ -106,7 +106,11 @@ function renderPayments(payments) {
     <div class="mini-client">
       <div>
         <strong>${payment.client_name}</strong>
-        <small>${payment.status}</small>
+        <small>
+  ${payment.status}
+  <br>
+  ${new Date(payment.updated_at).toLocaleString("es-MX")}
+</small>
       </div>
       <span>${payment.amount ? money.format(payment.amount) : "-"}</span>
     </div>
