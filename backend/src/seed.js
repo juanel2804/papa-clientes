@@ -1,11 +1,14 @@
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { closeDb, pool, query } from "./db.js";
+import { closeDb, hasDatabase, pool, query } from "./db.js";
+import { seedLocalDatabase } from "./local-store.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function seedDatabase() {
+  if (!hasDatabase) return seedLocalDatabase();
+
   const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
   await query(schema);
 

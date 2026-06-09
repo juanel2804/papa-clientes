@@ -1,0 +1,23 @@
+.pagos-view {
+  display: grid;
+  gap: 18px;
+}
+
+.month-picker {
+  min-width: 180px;
+}
+
+.pagos-view td small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.pagos-view table input,
+.pagos-view table select {
+  min-width: 130px;
+}
+
+.pagos-view table input[data-field="notes"] {
+  min-width: 220px;
+}

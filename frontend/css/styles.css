@@ -9,6 +9,10 @@
   --success:#22c55e;
   --warning:#f59e0b;
   --danger:#ef4444;
+  --ok:#22c55e;
+  --warn:#f59e0b;
+  --bad:#ef4444;
+  --brand-3:#60a5fa;
 
   --line:#334155;
 
@@ -53,7 +57,7 @@ button {
   justify-content: space-between;
   gap: 16px;
   padding: 14px 24px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(15, 23, 42, 0.96);
   border-bottom: 1px solid var(--line);
 }
 
@@ -120,7 +124,7 @@ button {
 
 .ghost {
   color: var(--ink);
-  background: #edf1e8;
+  background: var(--panel-2);
 }
 
 .danger {
@@ -216,7 +220,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   min-width: 720px;
-  background: #fff;
+  background: var(--panel);
 }
 
 th,
@@ -229,7 +233,7 @@ td {
 
 th {
   color: var(--muted);
-  background: #f8faf5;
+  background: #111c31;
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -299,7 +303,7 @@ textarea {
   border-radius: 8px;
   padding: 9px 10px;
   color: var(--ink);
-  background: #fff;
+  background: #111c31;
 }
 
 textarea {
@@ -377,7 +381,7 @@ textarea {
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfcf9;
+  background: #111c31;
 }
 
 .mini-item strong,

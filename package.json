@@ -1,0 +1,13 @@
+{
+  "name": "papa-clientes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/dev.js",
+    "dev": "node scripts/dev.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

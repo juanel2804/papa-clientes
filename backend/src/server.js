@@ -3,7 +3,16 @@ import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createToken, requireAuth, validateLogin } from "./auth.js";
-import { query } from "./db.js";
+import { hasDatabase, query } from "./db.js";
+import {
+  createLocalClient,
+  deleteLocalClient,
+  getLocalClients,
+  getLocalDashboard,
+  getLocalPayments,
+  saveLocalPayment,
+  updateLocalClient,
+} from "./local-store.js";
 import { seedDatabase } from "./seed.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -50,6 +59,10 @@ function dueSoonSql() {
 }
 
 async function ensureSchema() {
+  if (!hasDatabase) {
+    await seedDatabase();
+    return;
+  }
   const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
   await query(schema);
 }
@@ -68,6 +81,11 @@ async function handleLogin(req, res) {
 async function getDashboard(req, res, url) {
   const paymentMonth = monthStart(url.searchParams.get("month"));
   const dueDays = dueSoonSql();
+
+  if (!hasDatabase) {
+    return send(res, 200, await getLocalDashboard(paymentMonth, dueDays));
+  }
+
   const [
   { rows: totals },
   { rows: byCommunity },
@@ -208,6 +226,14 @@ const collectionRate =
 }
 
 async function getClients(req, res, url) {
+  if (!hasDatabase) {
+    const data = await getLocalClients({
+      search: url.searchParams.get("q") || "",
+      community: url.searchParams.get("community") || "",
+    });
+    return send(res, 200, data);
+  }
+
   const search = `%${(url.searchParams.get("q") || "").trim()}%`;
   const community = url.searchParams.get("community");
   const params = [search];
@@ -240,6 +266,8 @@ async function getClients(req, res, url) {
 
 async function createClient(req, res) {
   const body = await readBody(req);
+  if (!hasDatabase) return send(res, 201, await createLocalClient(body));
+
   const { rows } = await query(
     `INSERT INTO clients (name, community, cutoff_day, monthly_fee, phone, address, notes, active)
      VALUES ($1, $2, $3, $4, $5, $6, $7, TRUE)
@@ -259,6 +287,11 @@ async function createClient(req, res) {
 
 async function updateClient(req, res, id) {
   const body = await readBody(req);
+  if (!hasDatabase) {
+    const data = await updateLocalClient(id, body);
+    return data ? send(res, 200, data) : send(res, 404, { error: "Cliente no encontrado" });
+  }
+
   const { rows } = await query(
     `UPDATE clients SET
        name = $2,
@@ -288,12 +321,16 @@ async function updateClient(req, res, id) {
 }
 
 async function deleteClient(req, res, id) {
+  if (!hasDatabase) return send(res, 200, await deleteLocalClient(id));
+
   await query("UPDATE clients SET active = FALSE, updated_at = NOW() WHERE id = $1", [id]);
   return send(res, 200, { ok: true });
 }
 
 async function getPayments(req, res, url) {
   const paymentMonth = monthStart(url.searchParams.get("month"));
+  if (!hasDatabase) return send(res, 200, await getLocalPayments(paymentMonth));
+
   const { rows } = await query(
     `SELECT p.*, c.name AS client_name, c.community, c.cutoff_day
      FROM payments p
@@ -307,6 +344,8 @@ async function getPayments(req, res, url) {
 
 async function savePayment(req, res) {
   const body = await readBody(req);
+  if (!hasDatabase) return send(res, 200, await saveLocalPayment(body));
+
   const paidAt = body.status === "pagado" ? (body.paidAt || new Date().toISOString().slice(0, 10)) : null;
   const { rows } = await query(
     `INSERT INTO payments (client_id, payment_month, paid_at, amount, status, method, notes)

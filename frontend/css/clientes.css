@@ -1,0 +1,27 @@
+.clientes-view {
+  display: grid;
+  gap: 18px;
+}
+
+.client-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.42fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.clientes-view h3 {
+  margin: 0 0 14px;
+}
+
+.clientes-view td small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .client-layout {
+    grid-template-columns: 1fr;
+  }
+}
