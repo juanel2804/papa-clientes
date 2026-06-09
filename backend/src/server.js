@@ -132,17 +132,11 @@ async function getDashboard(req, res, url) {
        ORDER BY total DESC, community ASC`,
     ),
     query(
-      `SELECT
-  id,
-  name,
-  community,
-  cutoff_day
+      `SELECT id, name, community, cutoff_day
 FROM clients
-WHERE active
-AND cutoff_day > EXTRACT(DAY FROM CURRENT_DATE)
-AND cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) + 7
-ORDER BY cutoff_day ASC, name ASC
-LIMIT 20`,
+       WHERE active AND cutoff_day = ANY($1::int[])
+       ORDER BY cutoff_day ASC, name ASC
+       LIMIT 20`,
       [dueDays],
     ),
     query(
