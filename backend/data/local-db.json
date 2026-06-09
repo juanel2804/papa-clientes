@@ -199,14 +199,14 @@
       "id": 16,
       "name": "Areli Garcia Rodriguez",
       "community": "Sin comunidad",
-      "cutoff_day": 1,
-      "monthly_fee": null,
+      "cutoff_day": 10,
+      "monthly_fee": 500,
       "phone": "",
       "address": "",
       "notes": "Importado desde Hoja3 depositos directo",
       "active": true,
       "created_at": "2026-06-09T21:43:45.388Z",
-      "updated_at": "2026-06-09T21:43:45.388Z"
+      "updated_at": "2026-06-09T22:02:39.597Z"
     },
     {
       "id": 17,
@@ -356,13 +356,13 @@
       "name": "Margarita Escobedo Curz",
       "community": "Sin comunidad",
       "cutoff_day": 1,
-      "monthly_fee": null,
+      "monthly_fee": 500,
       "phone": "",
       "address": "",
       "notes": "Importado desde Hoja1",
       "active": true,
       "created_at": "2026-06-09T21:43:45.388Z",
-      "updated_at": "2026-06-09T21:43:45.388Z"
+      "updated_at": "2026-06-09T22:03:07.502Z"
     },
     {
       "id": 29,
@@ -2327,6 +2327,30 @@
       "method": "efectivo",
       "notes": "",
       "updated_at": "2026-06-09T21:52:32.069Z"
+    },
+    {
+      "id": 158,
+      "client_id": 23,
+      "payment_month": "2026-06-01",
+      "created_at": "2026-06-09T22:02:25.371Z",
+      "paid_at": "2026-06-09",
+      "amount": null,
+      "status": "pagado",
+      "method": "efectivo",
+      "notes": "",
+      "updated_at": "2026-06-09T22:02:25.371Z"
+    },
+    {
+      "id": 159,
+      "client_id": 28,
+      "payment_month": "2026-06-01",
+      "created_at": "2026-06-09T22:03:15.474Z",
+      "paid_at": "2026-06-09",
+      "amount": 500,
+      "status": "pagado",
+      "method": "efectivo",
+      "notes": "",
+      "updated_at": "2026-06-09T22:03:15.474Z"
     }
   ]
 }

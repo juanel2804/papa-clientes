@@ -375,7 +375,7 @@ async function savePayment(req, res) {
       body.clientId,
       monthStart(body.paymentMonth),
       paidAt,
-      body.amount || null,
+      body.amount ?? null,
       body.status || "pagado",
       body.method || "efectivo",
       body.notes || "",

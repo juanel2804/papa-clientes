@@ -252,14 +252,17 @@ confirmText: "Si, registrar",
 if (!ok) return;
 
 await api("/api/payments", {
-method: "POST",
-body: JSON.stringify({
-clientId: Number(payment.client_id),
-paymentMonth: state.month,
-paidAt: new Date().toISOString().slice(0, 10),
-status: "pagado",
-method,
-}),
+  method: "POST",
+  body: JSON.stringify({
+    clientId: Number(payment.client_id),
+    paymentMonth: state.month,
+    paidAt: new Date().toISOString().slice(0, 10),
+    amount: Number(payment.amount || 0),
+    status: "pagado",
+    method,
+    notes: ""
+  }),
+
 });
 
 state.dashboard = null;
