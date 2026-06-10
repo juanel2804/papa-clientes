@@ -72,7 +72,7 @@ export async function renderDashboard() {
           <div class="mini-list">${renderClients(state.dashboard?.dueSoon || [], "cutoff")}</div>
         </div>
         <div class="panel-card">
-          <h3>Pendientes de Cobro</h3>
+          <h3>Falta de cobrar</h3>
           <div class="mini-list">${renderClients(state.dashboard?.pendingClients || [], "fee")}</div>
         </div>
       </section>
