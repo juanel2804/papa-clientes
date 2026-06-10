@@ -283,23 +283,23 @@ async function getClients(req, res, url) {
   }
 
   const { rows } = await query(
-    `SELECT c.*,
-      lp.status AS latest_status,
+  `SELECT
+      c.*,
+      COALESCE(lp.status, 'pendiente') AS latest_status,
       lp.payment_month AS latest_payment_month
-     FROM clients c
-     LEFT JOIN LATERAL (
-       SELECT status, payment_month
-       FROM payments
-       WHERE client_id = c.id
-       ORDER BY payment_month DESC
-       LIMIT 1
-     ) lp ON TRUE
-     WHERE c.active = TRUE
-       AND (c.name ILIKE $1 OR c.community ILIKE $1 OR c.phone ILIKE $1)
-       ${communityFilter}
-     ORDER BY c.cutoff_day NULLS LAST, c.name ASC`,
-    params,
-  );
+   FROM clients c
+
+   LEFT JOIN payments lp
+     ON lp.client_id = c.id
+    AND lp.payment_month = DATE_TRUNC('month', CURRENT_DATE)
+
+   WHERE c.active = TRUE
+     AND (c.name ILIKE $1 OR c.community ILIKE $1 OR c.phone ILIKE $1)
+     ${communityFilter}
+
+   ORDER BY c.cutoff_day NULLS LAST, c.name ASC`,
+  params,
+);
   return send(res, 200, { clients: rows });
 }
 
