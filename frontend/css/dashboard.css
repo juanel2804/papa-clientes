@@ -139,8 +139,8 @@
 /* GRID */
 
 .dashboard-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display:flex;
+    flex-direction:column;
     gap:18px;
     margin-top:20px;
 }
@@ -262,9 +262,7 @@
         padding:14px;
     }
 
-    .mini-list{
-        max-height:220px;
-    }
+   
 
     .mini-client{
         padding:10px;
