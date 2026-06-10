@@ -38,7 +38,7 @@ export async function renderDashboard() {
           <strong>${totals.paid_this_month || 0}</strong>
         </div>
         <div class="kpi-card pendientes">
-          <span>Pendientes</span>
+          <span>Atrasados</span>
           <strong>${totals.pending_this_month || 0}</strong>
         </div>
         <div class="kpi-card suspendidos">
