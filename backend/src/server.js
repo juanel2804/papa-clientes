@@ -285,8 +285,16 @@ async function getClients(req, res, url) {
   const { rows } = await query(
   `SELECT
       c.*,
-      COALESCE(lp.status, 'pendiente') AS latest_status,
+
+      CASE
+        WHEN lp.status = 'suspendido' THEN 'suspendido'
+        WHEN lp.status = 'pagado' THEN 'pagado'
+        WHEN c.cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) THEN 'pendiente'
+        ELSE 'proximo'
+      END AS latest_status,
+
       lp.payment_month AS latest_payment_month
+
    FROM clients c
 
    LEFT JOIN payments lp
