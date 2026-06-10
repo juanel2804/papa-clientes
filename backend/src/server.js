@@ -128,7 +128,7 @@ async function getDashboard(req, res, url) {
   AND status = 'suspendido'
   AND suspension_until >= CURRENT_DATE
 ) AS suspended_clients
-FROM clients
+
        FROM clients`,
       [paymentMonth, dueDays],
     ),
