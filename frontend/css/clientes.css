@@ -101,6 +101,25 @@
 .client-modal {
   width: min(680px, 100%);
 }
+.tag.pagado{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.tag.pendiente{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.tag.proximo{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.tag.suspendido{
+  background:#fee2e2;
+  color:#b91c1c;
+}
 
 @media (max-width: 620px) {
   .clientes-view {
@@ -141,3 +160,4 @@
     grid-template-columns: 1fr;
   }
 }
+
