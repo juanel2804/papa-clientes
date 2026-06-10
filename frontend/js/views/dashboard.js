@@ -78,7 +78,7 @@ export async function renderDashboard() {
       </section>
 <br><br>
       <section class="panel-card">
-          <h3>Ultimos Pagos</h3>
+          <h3>Ultimos Pago</h3>
             <div class="mini-list">${renderPayments(state.dashboard?.latestPayments || [])}</div>
       </section>
     </section>
