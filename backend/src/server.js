@@ -123,10 +123,12 @@ async function getDashboard(req, res, url) {
     AND p.status = 'pagado'
   )
 ) AS pending_this_month,
-        COUNT(*) FILTER (WHERE active AND EXISTS (
-          SELECT 1 FROM payments p
-          WHERE p.client_id = clients.id AND p.status = 'suspendido'
-        )) AS suspended_clients
+        COUNT(*) FILTER (
+  WHERE active
+  AND status = 'suspendido'
+  AND suspension_until >= CURRENT_DATE
+) AS suspended_clients
+FROM clients
        FROM clients`,
       [paymentMonth, dueDays],
     ),
