@@ -75,12 +75,14 @@ export async function renderDashboard() {
           <h3>Falta de cobrar</h3>
           <div class="mini-list">${renderClients(state.dashboard?.pendingClients || [], "fee")}</div>
         </div>
+
+         <div class="panel-card">
+          <h3>Ultimos Pagos</h3>
+        <div class="mini-list">${renderPayments(state.dashboard?.latestPayments || [])}</div>
+        </div>
       </section>
 
-      <section class="panel-card">
-        <h3>Ultimos Pagos</h3>
-        <div class="mini-list">${renderPayments(state.dashboard?.latestPayments || [])}</div>
-      </section>
+      
     </section>
   `;
 }
