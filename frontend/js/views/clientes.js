@@ -83,7 +83,9 @@ function renderClientCards() {
           <strong>${escapeHtml(client.name)}</strong>
           <small>${escapeHtml(client.community || "Sin comunidad")}</small>
         </div>
-        <span class="tag ${client.latest_status || "pendiente"}">${escapeHtml(client.latest_status || "sin pago")}</span>
+       <span class="tag ${client.latest_status}">
+  ${client.latest_status}
+</span>
       </div>
 
       <dl class="client-meta">
