@@ -298,7 +298,7 @@ async function getClients(req, res, url) {
        THEN 'pendiente'
 
   ELSE 'proximo'
-END AS latest_status
+END AS latest_status,
 
       lp.payment_month AS latest_payment_month
 
