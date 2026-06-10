@@ -84,7 +84,12 @@ function renderClientCards() {
           <small>${escapeHtml(client.community || "Sin comunidad")}</small>
         </div>
        <span class="tag ${client.latest_status}">
-  ${client.latest_status} </span>
+  ${
+    client.latest_status === "suspendido"
+      ? `Suspendido`
+      : client.latest_status
+  }
+</span>
       </div>
 
       <dl class="client-meta">
@@ -100,6 +105,16 @@ function renderClientCards() {
           <dt>Telefono</dt>
           <dd>${escapeHtml(client.phone || "-")}</dd>
         </div>
+        ${
+  client.status === "suspendido"
+    ? `
+      <div>
+        <dt>Reactiva</dt>
+        <dd>${client.suspension_until || "-"}</dd>
+      </div>
+    `
+    : ""
+}
       </dl>
 
       <div class="card-actions">
@@ -154,6 +169,28 @@ function openClientModal(client = null) {
           Direccion
           <input name="address" value="${escapeHtml(client?.address || "")}">
         </label>
+        <label>
+  Estado
+  <select name="status">
+    <option value="activo"
+      ${client?.status === "activo" || !client?.status ? "selected" : ""}>
+      Activo
+    </option>
+
+    <option value="suspendido"
+      ${client?.status === "suspendido" ? "selected" : ""}>
+      Suspendido
+    </option>
+  </select>
+</label>
+
+<label>
+  Suspender hasta
+  <input
+    name="suspensionUntil"
+    type="date"
+    value="${client?.suspension_until || ""}">
+</label>
 
         <label class="wide">
           Notas
@@ -175,14 +212,18 @@ async function saveClient(event, client, close) {
   event.preventDefault();
   const form = new FormData(event.target);
   const body = {
-    name: form.get("name"),
-    community: form.get("community"),
-    cutoffDay: Number(form.get("cutoffDay")) || null,
-    monthlyFee: Number(form.get("monthlyFee")) || null,
-    phone: form.get("phone"),
-    address: form.get("address"),
-    notes: form.get("notes"),
-  };
+  name: form.get("name"),
+  community: form.get("community"),
+  cutoffDay: Number(form.get("cutoffDay")) || null,
+  monthlyFee: Number(form.get("monthlyFee")) || null,
+  phone: form.get("phone"),
+  address: form.get("address"),
+  notes: form.get("notes"),
+
+  status: form.get("status") || "activo",
+  suspensionUntil:
+    form.get("suspensionUntil") || null,
+};
 
   const ok = await confirmDialog({
     title: client ? "Guardar cambios" : "Registrar cliente",

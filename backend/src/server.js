@@ -287,11 +287,18 @@ async function getClients(req, res, url) {
       c.*,
 
       CASE
-        WHEN lp.status = 'suspendido' THEN 'suspendido'
-        WHEN lp.status = 'pagado' THEN 'pagado'
-        WHEN c.cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE) THEN 'pendiente'
-        ELSE 'proximo'
-      END AS latest_status,
+  WHEN c.status = 'suspendido'
+       AND c.suspension_until >= CURRENT_DATE
+       THEN 'suspendido'
+
+  WHEN lp.status = 'pagado'
+       THEN 'pagado'
+
+  WHEN c.cutoff_day <= EXTRACT(DAY FROM CURRENT_DATE)
+       THEN 'pendiente'
+
+  ELSE 'proximo'
+END AS latest_status
 
       lp.payment_month AS latest_payment_month
 
@@ -316,18 +323,33 @@ async function createClient(req, res) {
   if (!hasDatabase) return send(res, 201, await createLocalClient(body));
 
   const { rows } = await query(
-    `INSERT INTO clients (name, community, cutoff_day, monthly_fee, phone, address, notes, active)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, TRUE)
-     RETURNING *`,
+    `INSERT INTO clients (
+  name,
+  community,
+  cutoff_day,
+  monthly_fee,
+  phone,
+  address,
+  notes,
+  active,
+  status,
+  suspension_until
+)
+VALUES (
+  $1,$2,$3,$4,$5,$6,$7,TRUE,$8,$9
+)
+RETURNING *`,
     [
-      body.name,
-      body.community || "Sin comunidad",
-      body.cutoffDay || null,
-      body.monthlyFee || null,
-      body.phone || "",
-      body.address || "",
-      body.notes || "",
-    ],
+  body.name,
+  body.community || "Sin comunidad",
+  body.cutoffDay || null,
+  body.monthlyFee || null,
+  body.phone || "",
+  body.address || "",
+  body.notes || "",
+  body.status || "activo",
+  body.suspensionUntil || null,
+]
   );
   return send(res, 201, { client: rows[0] });
 }
@@ -341,28 +363,32 @@ async function updateClient(req, res, id) {
 
   const { rows } = await query(
     `UPDATE clients SET
-       name = $2,
-       community = $3,
-       cutoff_day = $4,
-       monthly_fee = $5,
-       phone = $6,
-       address = $7,
-       notes = $8,
-       active = $9,
-       updated_at = NOW()
+   name = $2,
+   community = $3,
+   cutoff_day = $4,
+   monthly_fee = $5,
+   phone = $6,
+   address = $7,
+   notes = $8,
+   active = $9,
+   status = $10,
+   suspension_until = $11,
+   updated_at = NOW()
      WHERE id = $1
      RETURNING *`,
     [
-      id,
-      body.name,
-      body.community || "Sin comunidad",
-      body.cutoffDay || null,
-      body.monthlyFee || null,
-      body.phone || "",
-      body.address || "",
-      body.notes || "",
-      body.active !== false,
-    ],
+  id,
+  body.name,
+  body.community || "Sin comunidad",
+  body.cutoffDay || null,
+  body.monthlyFee || null,
+  body.phone || "",
+  body.address || "",
+  body.notes || "",
+  body.active !== false,
+  body.status || "activo",
+  body.suspensionUntil || null,
+],
   );
   return rows[0] ? send(res, 200, { client: rows[0] }) : send(res, 404, { error: "Cliente no encontrado" });
 }
