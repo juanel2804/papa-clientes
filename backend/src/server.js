@@ -97,7 +97,17 @@ async function getDashboard(req, res, url) {
     query(
       `SELECT
         COUNT(*) FILTER (WHERE active) AS total_clients,
-        COUNT(*) FILTER (WHERE active AND cutoff_day = ANY($2::int[])) AS due_soon,
+        COUNT(*) FILTER (
+  WHERE active
+  AND cutoff_day = ANY($2::int[])
+  AND NOT EXISTS (
+    SELECT 1
+    FROM payments p
+    WHERE p.client_id = clients.id
+    AND p.payment_month = $1::date
+    AND p.status = 'pagado'
+  )
+) AS due_soon,
         COUNT(*) FILTER (WHERE active AND EXISTS (
           SELECT 1 FROM payments p
           WHERE p.client_id = clients.id AND p.payment_month = $1::date AND p.status = 'pagado'
@@ -128,12 +138,32 @@ async function getDashboard(req, res, url) {
        ORDER BY total DESC, community ASC`,
     ),
     query(
-      `SELECT id, name, community, cutoff_day
-FROM clients
-       WHERE active AND cutoff_day = ANY($1::int[])
-       ORDER BY cutoff_day ASC, name ASC
-       LIMIT 20`,
-      [dueDays],
+      `SELECT
+  c.id,
+  c.name,
+  c.community,
+  c.cutoff_day
+
+FROM clients c
+
+WHERE c.active = TRUE
+
+AND c.cutoff_day = ANY($1::int[])
+
+AND NOT EXISTS (
+  SELECT 1
+  FROM payments p
+  WHERE p.client_id = c.id
+  AND p.payment_month = $2::date
+  AND p.status = 'pagado'
+)
+
+ORDER BY
+  c.cutoff_day ASC,
+  c.name ASC
+
+LIMIT 20`,
+      [dueDays, paymentMonth]
     ),
     query(
       `SELECT p.id, c.name AS client_name, p.payment_month, p.amount, p.status, p.method, p.notes, p.updated_at
