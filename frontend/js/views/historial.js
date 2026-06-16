@@ -5,10 +5,15 @@ import { money } from "../utils.js";
 export async function renderHistorial() {
   const view = document.querySelector("#view");
 
-  const month =
-    state.historialMonth ||
-    new Date().toISOString().slice(0, 7);
+  const today = new Date();
 
+const currentMonth = `${today.getFullYear()}-${String(
+today.getMonth()+1
+).padStart(2,"0")}`;
+
+const month =
+state.historialMonth ||
+currentMonth;
   try {
     const data =
       await api(
@@ -255,11 +260,28 @@ function formatMonth(month) {
 }
 
 function changeMonth(month, offset) {
-  const date = new Date(`${month}-01`);
+
+  const [year, currentMonth] =
+    month.split("-").map(Number);
+
+  const date = new Date(
+    year,
+    currentMonth - 1,
+    1
+  );
 
   date.setMonth(
     date.getMonth() + offset
   );
 
-  return date.toISOString().slice(0, 7);
+  const newYear =
+    date.getFullYear();
+
+  const newMonth =
+    String(
+      date.getMonth() + 1
+    ).padStart(2, "0");
+
+  return `${newYear}-${newMonth}`;
+
 }
