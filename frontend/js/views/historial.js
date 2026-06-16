@@ -10,7 +10,10 @@ export async function renderHistorial() {
     new Date().toISOString().slice(0, 7);
 
   try {
-    const data = await api(`/api/payments?month=${month}`);
+    const data =
+      await api(
+        `/api/history?month=${month}`
+      );
 
     const search =
       (state.historialSearch || "").toLowerCase();
@@ -21,15 +24,13 @@ export async function renderHistorial() {
         .includes(search)
     );
 
-    const totalCollected = payments
-      .filter((p) => p.status === "pagado")
-      .reduce((sum, p) => sum + Number(p.amount || 0), 0);
+    const totalCollected = payments.reduce(
+      (sum, p) => sum + Number(p.amount || 0),
+      0
+    );
 
-    const paidClients =
-      payments.filter((p) => p.status === "pagado").length;
+    const paidClients = payments.length;
 
-    const pendingClients =
-      payments.filter((p) => p.status !== "pagado").length;
 
     view.innerHTML = `
       <section class="historial-view">
@@ -41,24 +42,48 @@ export async function renderHistorial() {
           </div>
         </div>
 
-        <div class="historial-toolbar">
+     <div class="historial-toolbar">
 
-          <input
-            type="text"
-            id="searchHistory"
-            placeholder="Buscar cliente..."
-            value="${state.historialSearch || ""}"
-          >
+  <input
+    type="text"
+    id="searchHistory"
+    placeholder="Buscar cliente..."
+    value="${state.historialSearch || ""}"
+  >
 
-          <div class="month-nav">
-            <button id="prevMonth">◀</button>
-            <span>${formatMonth(month)}</span>
-            <button id="nextMonth">▶</button>
-          </div>
+</div>
+
+<div class="month-nav">
+
+  <button
+    class="month-btn"
+    id="prevMonth"
+  >
+
+    ❮
+
+  </button>
+
+  <div class="month-title">
+
+    ${formatMonth(month)}
+
+  </div>
+
+  <button
+    class="month-btn"
+    id="nextMonth"
+  >
+
+    ❯
+
+  </button>
+
+</div>
 
         </div>
 
-        <section class="kpis">
+        <section class="historial-kpis">
 
           <div class="kpi-card success">
             <span>Total Cobrado</span>
@@ -66,18 +91,14 @@ export async function renderHistorial() {
           </div>
 
           <div class="kpi-card pagados">
-            <span>Pagados</span>
+            <span>Clientes que pagaron</span>
             <strong>${paidClients}</strong>
           </div>
 
-          <div class="kpi-card pendientes">
-            <span>Pendientes</span>
-            <strong>${pendingClients}</strong>
-          </div>
-
+          
         </section>
 
-        <section class="panel-card">
+        <section class="historial-panel panel-card">
 
           <h3>Pagos Registrados</h3>
 
@@ -123,79 +144,108 @@ export async function renderHistorial() {
 function renderPaymentsTable(payments) {
 
   if (!payments.length) {
+
     return `
       <div class="empty">
+
         No hay pagos registrados.
+
       </div>
     `;
   }
 
   return `
-    <table class="history-table">
 
-      <thead>
-        <tr>
-          <th>Cliente</th>
-          <th>Comunidad</th>
-          <th>Estado</th>
-          <th>Fecha</th>
-          <th>Monto</th>
-          <th>Método</th>
-          <th>Corte</th>
-        </tr>
-      </thead>
+  <table class="history-table">
 
-      <tbody>
+    <thead>
 
-        ${payments.map(payment => `
+      <tr>
 
-          <tr>
+      <th>Cliente</th>
 
-            <td>
-              <strong>${payment.client_name}</strong>
-            </td>
+<th>Fecha</th>
 
-            <td>
-              ${payment.community || "-"}
-            </td>
+<th>Monto</th>
 
-            <td>
-              <span class="status-badge ${payment.status}">
-                ${payment.status}
-              </span>
-            </td>
+<th>Tipo Pago</th>
 
-            <td>
-              ${
-                payment.paid_at
-                  ? new Date(payment.paid_at)
-                      .toLocaleDateString("es-MX")
-                  : "-"
-              }
-            </td>
+<th>Corte</th>
 
-            <td>
-              ${money.format(payment.amount || 0)}
-            </td>
+   
 
-            <td>
-              ${payment.method || "-"}
-            </td>
+      </tr>
 
-            <td>
-              Día ${payment.cutoff_day || "-"}
-            </td>
+    </thead>
 
-          </tr>
+   <tbody>
 
-        `).join("")}
+${payments.map(payment => `
 
-      </tbody>
+<tr class="payment-row">
 
-    </table>
+  <td>
+
+    <div class="client-cell">
+
+      <strong>
+
+        ${payment.client_name}
+
+      </strong>
+
+      <small>
+
+        ${payment.community || "Sin comunidad"}
+
+      </small>
+
+    </div>
+
+  </td>
+
+  <td>
+
+    ${payment.paid_at
+
+      ? new Date(payment.paid_at)
+
+        .toLocaleDateString("es-MX")
+
+      : "-"
+
+    }
+
+  </td>
+
+  <td>
+
+    ${money.format(payment.amount || 0)}
+
+  </td>
+
+  <td>
+
+    ${payment.method || "-"}
+
+  </td>
+
+  <td>
+
+    Día ${payment.cutoff_day || "-"}
+
+  </td>
+
+</tr>
+
+`).join("")}
+
+</tbody>
+
+  </table>
+
   `;
 }
-
 function formatMonth(month) {
   return new Date(`${month}-01`)
     .toLocaleDateString("es-MX", {

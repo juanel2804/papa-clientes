@@ -2,11 +2,11 @@ import { spawn } from "node:child_process";
 
 const commands = [
   {
-    name: "api",
-    command: process.execPath,
-    args: ["src/server.js"],
-    cwd: new URL("../backend/", import.meta.url),
-  },
+  name: "api",
+  command: process.execPath,
+  args: ["--env-file=.env", "src/server.js"],
+  cwd: new URL("../backend/", import.meta.url),
+},
   {
     name: "web",
     command: process.execPath,

@@ -429,7 +429,91 @@ async function getPayments(req, res, url) {
   );
   return send(res, 200, { month: paymentMonth, payments: rows });
 }
+async function getHistory(req, res, url) {
 
+  const paymentMonth = monthStart(
+    url.searchParams.get("month")
+  );
+
+  if (!hasDatabase) {
+
+    return send(
+      res,
+      200,
+      {
+        month: paymentMonth,
+        payments: []
+      }
+    );
+  }
+
+  const { rows } = await query(
+
+  `SELECT
+
+      p.id,
+
+      c.id AS client_id,
+
+      c.name AS client_name,
+
+      c.community,
+
+      c.cutoff_day,
+
+      p.amount,
+
+      p.status,
+
+      p.method,
+
+      p.paid_at,
+
+      p.updated_at
+
+   FROM payments p
+
+   JOIN clients c
+
+     ON c.id = p.client_id
+
+   WHERE
+
+     p.payment_month = $1::date
+
+   AND
+
+     p.status = 'pagado'
+
+   ORDER BY
+
+     p.paid_at DESC,
+
+     c.name ASC
+
+  `,
+
+  [paymentMonth]
+
+  );
+
+  return send(
+
+    res,
+
+    200,
+
+    {
+
+      month: paymentMonth,
+
+      payments: rows
+
+    }
+
+  );
+
+}
 async function savePayment(req, res) {
   const body = await readBody(req);
   if (!hasDatabase) return send(res, 200, await saveLocalPayment(body));
@@ -491,6 +575,19 @@ async function router(req, res) {
     if (clientMatch && req.method === "DELETE") return deleteClient(req, res, clientMatch[1]);
 
     if (req.method === "GET" && url.pathname === "/api/payments") return getPayments(req, res, url);
+    if (
+req.method === "GET"
+
+&&
+
+url.pathname === "/api/history"
+)
+
+return getHistory(
+req,
+res,
+url
+);
     if (req.method === "POST" && url.pathname === "/api/payments") return savePayment(req, res);
 
     return send(res, 404, { error: "Ruta no encontrada" });

@@ -219,14 +219,15 @@ button {
   border: 1px solid var(--line);
   border-radius: 8px;
 }
+table{
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 720px;
-  background: var(--panel);
+width:100%;
+
+border-collapse:collapse;
+
+background:var(--panel);
+
 }
-
 th,
 td {
   padding: 12px;
