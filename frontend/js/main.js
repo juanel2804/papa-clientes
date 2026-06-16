@@ -16,6 +16,10 @@ import {
   renderPagos
 } from "./views/pagos.js";
 
+import {
+  renderHistorial
+} from "./views/historial.js";
+
 import { setView } from "./router.js";
 
 async function start() {
@@ -44,6 +48,7 @@ async function renderShell() {
           <button data-view="dashboard">Inicio</button>
           <button data-view="clientes">Clientes</button>
           <button data-view="pagos">Pagos</button>
+            <button data-view="historial">Historial</button>
         </nav>
 
         <button class="danger" id="logoutBtn">Salir</button>
@@ -73,6 +78,7 @@ async function renderCurrentView() {
 
   if (state.view === "clientes") return renderClientes();
   if (state.view === "pagos") return renderPagos();
+  if (state.view === "historial") return renderHistorial();
   return renderDashboard();
 }
 
