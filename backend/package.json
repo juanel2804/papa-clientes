@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "scripts": {
-  "start": "node --env-file=.env src/server.js",
-
-  "seed": "node --env-file=.env src/seed.js"
-},
+   "scripts": {
+    "start": "node src/server.js",
+    "seed": "node src/seed.js"
+  },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "pg": "^8.13.1"
   },
   "engines": {
