@@ -7,13 +7,13 @@ export async function renderHistorial() {
 
   const today = new Date();
 
-const currentMonth = `${today.getFullYear()}-${String(
-today.getMonth()+1
-).padStart(2,"0")}`;
+  const currentMonth = `${today.getFullYear()}-${String(
+    today.getMonth() + 1
+  ).padStart(2, "0")}`;
 
-const month =
-state.historialMonth ||
-currentMonth;
+  const month =
+    state.historialMonth ||
+    currentMonth;
   try {
     const data =
       await api(
@@ -116,25 +116,26 @@ currentMonth;
       </section>
     `;
 
+
     document
-  .querySelector("#searchHistory")
-  .addEventListener("input", async (e) => {
+      .querySelector("#searchHistory")
+      .addEventListener("input", async (e) => {
 
-    state.historialSearch = e.target.value;
+        state.historialSearch = e.target.value;
 
-    await renderHistorial();
+        await renderHistorial();
 
-    const input =
-      document.querySelector("#searchHistory");
+        const input =
+          document.querySelector("#searchHistory");
 
-    input.focus();
+        input.focus();
 
-    input.setSelectionRange(
-      input.value.length,
-      input.value.length
-    );
+        input.setSelectionRange(
+          input.value.length,
+          input.value.length
+        );
 
-  });
+      });
 
     document
       .querySelector("#prevMonth")
@@ -149,6 +150,43 @@ currentMonth;
         state.historialMonth = changeMonth(month, 1);
         renderHistorial();
       });
+      document
+  .querySelectorAll(".delete-payment")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      async () => {
+
+        const id =
+          button.dataset.id;
+
+        const ok =
+await showCancelAlert();
+
+if(!ok) return;
+
+        if (!ok) return;
+
+        await api(
+
+          `/api/payments/${button.dataset.id}/cancel`,
+
+          {
+
+            method: "PUT"
+
+          }
+
+        );
+
+        renderHistorial();
+      }
+    );
+
+  });
+
+
 
   } catch (error) {
     view.innerHTML = `
@@ -189,6 +227,7 @@ function renderPaymentsTable(payments) {
 <th>Tipo Pago</th>
 
 <th>Corte</th>
+<th>Acciones</th>
 
    
 
@@ -253,6 +292,18 @@ ${payments.map(payment => `
     Día ${payment.cutoff_day || "-"}
 
   </td>
+  <td>
+
+<button
+  class="delete-payment"
+  data-id="${payment.id}"
+>
+
+❌
+
+</button>
+
+</td>
 
 </tr>
 
@@ -284,7 +335,7 @@ function formatMonth(month) {
     "diciembre"
   ];
 
-  return `${meses[Number(currentMonth)-1]} ${year}`;
+  return `${meses[Number(currentMonth) - 1]} ${year}`;
 
 }
 
@@ -312,5 +363,88 @@ function changeMonth(month, offset) {
     ).padStart(2, "0");
 
   return `${newYear}-${newMonth}`;
+
+}
+function showCancelAlert(){
+
+return new Promise(resolve=>{
+
+const modal =
+document.createElement("div");
+
+modal.className =
+"cancel-overlay";
+
+modal.innerHTML = `
+
+<div class="cancel-modal">
+
+<div class="cancel-icon">
+
+↩️
+
+</div>
+
+<h3>
+
+¿Cancelar pago?
+
+</h3>
+
+<p>
+
+El cliente volverá a aparecer como pendiente.
+
+</p>
+
+<div class="cancel-buttons">
+
+<button
+class="btn-no"
+>
+
+No
+
+</button>
+
+<button
+class="btn-si"
+>
+
+Sí, cancelar
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(
+modal
+);
+
+modal
+.querySelector(".btn-no")
+.onclick=()=>{
+
+modal.remove();
+
+resolve(false);
+
+};
+
+modal
+.querySelector(".btn-si")
+.onclick=()=>{
+
+modal.remove();
+
+resolve(true);
+
+};
+
+});
 
 }

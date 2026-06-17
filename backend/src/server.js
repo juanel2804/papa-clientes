@@ -542,6 +542,50 @@ async function savePayment(req, res) {
   );
   return send(res, 200, { payment: rows[0] });
 }
+async function cancelPayment(
+  req,
+  res,
+  id
+) {
+
+  await query(
+
+    `
+    UPDATE payments
+
+    SET
+
+      status = 'pendiente',
+
+      paid_at = NULL,
+
+      updated_at = NOW()
+
+    WHERE id = $1
+
+    RETURNING *
+
+    `,
+
+    [id]
+
+  );
+
+  return send(
+
+    res,
+
+    200,
+
+    {
+
+      ok:true
+
+    }
+
+  );
+
+}
 
 async function runSeed(req, res) {
   const result = await seedDatabase();
@@ -553,10 +597,13 @@ async function runSeed(req, res) {
 }
 
 async function router(req, res) {
+
+
   if (req.method === "OPTIONS") {
     res.writeHead(204, corsHeaders());
     return res.end();
   }
+  
 
   const url = new URL(req.url, `http://${req.headers.host}`);
   try {
@@ -587,6 +634,26 @@ return getHistory(
 req,
 res,
 url
+);
+const paymentMatch =
+url.pathname.match(
+  /^\/api\/payments\/(\d+)\/cancel$/
+);
+
+if (
+  paymentMatch
+  &&
+  req.method === "PUT"
+)
+
+return cancelPayment(
+
+  req,
+
+  res,
+
+  paymentMatch[1]
+
 );
     if (req.method === "POST" && url.pathname === "/api/payments") return savePayment(req, res);
 
