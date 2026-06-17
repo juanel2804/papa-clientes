@@ -117,11 +117,24 @@ currentMonth;
     `;
 
     document
-      .querySelector("#searchHistory")
-      .addEventListener("input", (e) => {
-        state.historialSearch = e.target.value;
-        renderHistorial();
-      });
+  .querySelector("#searchHistory")
+  .addEventListener("input", async (e) => {
+
+    state.historialSearch = e.target.value;
+
+    await renderHistorial();
+
+    const input =
+      document.querySelector("#searchHistory");
+
+    input.focus();
+
+    input.setSelectionRange(
+      input.value.length,
+      input.value.length
+    );
+
+  });
 
     document
       .querySelector("#prevMonth")
