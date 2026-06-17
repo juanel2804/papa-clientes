@@ -265,11 +265,27 @@ ${payments.map(payment => `
   `;
 }
 function formatMonth(month) {
-  return new Date(`${month}-01`)
-    .toLocaleDateString("es-MX", {
-      month: "long",
-      year: "numeric"
-    });
+
+  const [year, currentMonth] =
+    month.split("-");
+
+  const meses = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ];
+
+  return `${meses[Number(currentMonth)-1]} ${year}`;
+
 }
 
 function changeMonth(month, offset) {
